@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIDUS | Auditoría Externa de Alta Calidad en Ecuador</title>
+<meta name="description" content="FIDUS ofrece auditoría externa, tributaria y control interno bajo NIA y NIIF en Ecuador.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --navy:#1A2B49;--navy-dark:#0F1A2E;--teal:#0F6B6A;--teal-dark:#0A4D4C;
+  --teal-light:#1A8A88;--teal-soft:#7FCFCB;--silver:#A9B4C2;--silver-light:#D0D5DB;
+  --silver-dark:#7A8694;--light-bg:#EAF2F2;--text-dark:#2C3E50;--text-light:#6C757D;
+  --white:#FFFFFF;--t:all .4s cubic-bezier(.25,.8,.25,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;color:var(--text-dark);line-height:1.65;overflow-x:hidden;text-align:center;background:#fff}
+h1,h2,h3,h4,h5{font-family:'Montserrat',sans-serif;font-weight:700;line-height:1.2}
+a{text-decoration:none;color:inherit;transition:var(--t)}
+ul{list-style:none}
+img{max-width:100%;display:block}
+.container{width:92%;max-width:1240px;margin:0 auto;position:relative;z-index:2}
+.section{padding:110px 0;position:relative;overflow:hidden}
+.section-title{text-align:center;margin-bottom:70px;position:relative;z-index:2}
+.section-title .eyebrow{display:inline-block;font-family:'Montserrat';font-weight:700;font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:18px;padding:8px 22px;border-radius:50px;background:rgba(15,107,106,.12)}
+.section-title h2{font-size:2.7rem;color:var(--navy);margin-bottom:18px;font-weight:800;letter-spacing:-.5px}
+.section-title p{color:var(--text-light);font-size:1.08rem;max-width:780px;margin:0 auto}
+.section-title.light h2{color:#fff}
+.section-title.light p{color:rgba(255,255,255,.85)}
+.section-title.light .eyebrow{color:var(--teal-soft);background:rgba(127,207,203,.15);border:1px solid rgba(127,207,203,.3)}
+
+/* LOGOS */
+.logo-img-header{height:56px;width:auto;transition:var(--t);background:#fff;padding:6px 12px;border-radius:8px}
+header.scrolled .logo-img-header{height:52px}
+.logo-img-hero{height:200px;width:auto;margin:0 auto 20px;background:#fff;padding:22px 30px;border-radius:22px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.logo-fallback-header{display:none;font-family:'Montserrat';font-weight:900;letter-spacing:6px;color:#fff;font-size:1.4rem}
+.logo-fallback-header small{display:block;font-size:.5rem;letter-spacing:4px;color:var(--silver);font-weight:600;margin-top:2px}
+header.scrolled .logo-fallback-header{color:var(--teal)}
+
+/* BOTONES */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:50px;font-family:'Montserrat';font-weight:600;font-size:.95rem;cursor:pointer;border:none;position:relative;overflow:hidden;z-index:1;transition:var(--t);letter-spacing:.3px}
+.btn-primary{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;box-shadow:0 12px 25px rgba(15,107,106,.4)}
+.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(135deg,var(--teal-soft),var(--silver));transition:var(--t);z-index:-1;border-radius:50px}
+.btn-primary:hover::before{left:0}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 35px rgba(15,107,106,.5);color:var(--teal-dark)}
+.btn-outline{background:transparent;color:#fff;border:2px solid #fff}
+.btn-outline:hover{background:#fff;color:var(--teal);transform:translateY(-3px)}
+
+/* HEADER */
+header{position:fixed;top:0;width:100%;z-index:1000;padding:12px 0;transition:var(--t);background:transparent}
+header.scrolled{background:linear-gradient(135deg,var(--navy),var(--teal-dark));padding:8px 0;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+nav{display:flex;justify-content:space-between;align-items:center;position:relative;gap:20px}
+.logo{display:flex;align-items:center;flex-shrink:0}
+.nav-links{display:flex;gap:22px;align-items:center;justify-content:flex-end;flex-wrap:wrap;flex:1}
+.nav-links a{font-family:'Montserrat';font-weight:600;font-size:.82rem;color:#fff;position:relative;padding:6px 0;white-space:nowrap}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--teal-soft);transition:var(--t)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a:hover{color:var(--teal-soft)}
+.nav-cta{background:linear-gradient(135deg,var(--teal-light),var(--teal))!important;color:#fff!important;padding:10px 22px!important;border-radius:50px;box-shadow:0 8px 20px rgba(15,107,106,.5);border:1px solid rgba(255,255,255,.2)}
+.nav-cta::after{display:none}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 25px rgba(127,207,203,.5)}
+.menu-toggle{display:none;font-size:1.5rem;cursor:pointer;color:#fff;z-index:1002}
+
+/* HERO */
+.hero{min-height:100vh;padding:140px 0 80px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#0A4D4C 0%,#1A2B49 50%,#0F6B6A 100%)}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80') center/cover;opacity:.12;mix-blend-mode:overlay}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.orb-1{width:600px;height:600px;background:var(--teal-light);top:-150px;left:-200px;opacity:.6;animation:float 10s ease-in-out infinite}
+.orb-2{width:700px;height:700px;background:var(--silver);bottom:-250px;right:-200px;opacity:.25;animation:float 14s ease-in-out infinite reverse}
+.orb-3{width:400px;height:400px;background:var(--teal-soft);top:40%;left:60%;opacity:.25;animation:float 12s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-40px) scale(1.1)}}
+.hero-content{position:relative;z-index:2;max-width:960px;padding:0 24px;animation:fadeUp 1.2s ease;display:flex;flex-direction:column;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 24px;background:rgba(127,207,203,.15);border:1px solid rgba(127,207,203,.5);border-radius:50px;color:var(--teal-soft);font-family:'Montserrat';font-weight:700;font-size:.78rem;letter-spacing:2.5px;text-transform:uppercase;margin:16px 0 22px;backdrop-filter:blur(10px)}
+.hero h1{font-size:3.4rem;color:#fff;font-weight:900;letter-spacing:-1.5px;margin-bottom:22px;text-shadow:0 6px 20px rgba(0,0,0,.4);line-height:1.05}
+.hero h1 span{background:linear-gradient(135deg,var(--teal-soft),var(--silver-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.12rem;color:rgba(255,255,255,.92);max-width:780px;margin:0 auto 40px;font-weight:300;line-height:1.7}
+.hero-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+/* TRUST BAR */
+.trust-bar{background:linear-gradient(90deg,var(--teal-dark),var(--teal),var(--teal-light),var(--teal),var(--teal-dark));padding:22px 0;position:relative;overflow:hidden}
+.trust-bar::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,.05) 20px,rgba(255,255,255,.05) 40px)}
+.trust-items{display:flex;justify-content:center;align-items:center;gap:50px;flex-wrap:wrap;position:relative}
+.trust-item{display:flex;align-items:center;gap:12px;color:#fff;font-family:'Montserrat';font-weight:700;font-size:.82rem;letter-spacing:1.5px;text-transform:uppercase}
+.trust-item i{font-size:1.15rem;color:var(--teal-soft)}
+
+/* SOBRE NOSOTROS */
+.about{background:linear-gradient(135deg,#E8F2F2 0%,#D5E5E5 50%,#E8F2F2 100%);position:relative}
+.about::before{content:'';position:absolute;top:0;right:0;width:400px;height:400px;background:radial-gradient(circle,rgba(15,107,106,.15),transparent 70%);border-radius:50%}
+.about::after{content:'';position:absolute;bottom:0;left:0;width:500px;height:500px;background:radial-gradient(circle,rgba(169,180,194,.25),transparent 70%);border-radius:50%}
+.brands-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1100px;margin:0 auto;position:relative;z-index:2}
+.brand-card{padding:50px 45px;border-radius:16px;transition:var(--t);text-align:left;box-shadow:0 10px 30px rgba(15,107,106,.08);position:relative;overflow:hidden;background:#fff;border:1px solid rgba(15,107,106,.08)}
+.brand-card:hover{transform:translateY(-8px);box-shadow:0 25px 50px rgba(15,107,106,.18)}
+.brand-logo-wrap{height:120px;margin-bottom:30px;display:flex;align-items:center;justify-content:center}
+.brand-logo-wrap img{max-height:100%;max-width:280px;object-fit:contain}
+.brand-card h3{font-size:1.1rem;color:var(--teal);margin-bottom:20px;font-weight:800;letter-spacing:.2px;line-height:1.4}
+.brand-card p{color:var(--text-dark);font-size:.95rem;line-height:1.8;margin-bottom:24px}
+.brand-list{list-style:none;padding:0;margin:0}
+.brand-list li{font-size:.93rem;color:var(--text-dark);padding:5px 0 5px 24px;position:relative;line-height:1.55}
+.brand-list li::before{content:'';position:absolute;left:0;top:13px;width:10px;height:10px;background:var(--teal);border-radius:50%}
+
+/* SERVICIOS */
+.services{background:linear-gradient(135deg,#0A4D4C 0%,#0F6B6A 50%,#1A8A88 100%);position:relative}
+.services::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 15% 20%,rgba(127,207,203,.25),transparent 45%),radial-gradient(circle at 85% 80%,rgba(169,180,194,.2),transparent 45%)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:30px;position:relative;z-index:2}
+.service-card{padding:45px 30px;border-radius:20px;transition:var(--t);text-align:center;position:relative;overflow:hidden;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(10px);cursor:pointer;color:#fff}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:4px;background:var(--teal-soft);transform:scaleX(0);transform-origin:left;transition:var(--t)}
+.service-card:hover::after{transform:scaleX(1)}
+.service-card:hover{transform:translateY(-12px);background:rgba(255,255,255,.15);box-shadow:0 25px 50px rgba(0,0,0,.3);border-color:var(--teal-soft)}
+.service-icon{width:85px;height:85px;line-height:85px;margin:0 auto 24px;border-radius:22px;background:rgba(255,255,255,.15);color:#fff;font-size:2.2rem;transition:var(--t);border:1px solid rgba(255,255,255,.25)}
+.service-card:hover .service-icon{transform:rotate(-8deg) scale(1.1);background:var(--teal-soft);color:var(--navy)}
+.service-card h3{font-size:1.3rem;color:#fff;margin-bottom:12px;font-weight:700}
+.service-card p{color:rgba(255,255,255,.9);font-size:.93rem;line-height:1.7}
+.card-more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 18px;border-radius:50px;font-family:'Montserrat';font-weight:700;font-size:.72rem;letter-spacing:1.4px;text-transform:uppercase;color:var(--teal-soft);border:1px solid rgba(127,207,203,.45);background:rgba(127,207,203,.1);transition:all .4s var(--ease-out)}
+.card-more i{transition:transform .4s var(--ease-out)}
+.service-card:hover .card-more{background:var(--teal-soft);color:var(--navy);border-color:var(--teal-soft);box-shadow:0 10px 25px rgba(127,207,203,.45)}
+.service-card:hover .card-more i{transform:translateX(6px)}
+
+/* POR QUÉ ELEGIRNOS */
+.why{background:linear-gradient(135deg,#1A2B49 0%,#0F1A2E 100%);color:#fff;position:relative}
+.why::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 20%,rgba(15,107,106,.4),transparent 45%),radial-gradient(circle at 80% 80%,rgba(127,207,203,.15),transparent 45%)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;position:relative;z-index:2}
+.why-card{padding:40px 28px;border-radius:18px;text-align:center;transition:var(--t);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-top:4px solid var(--teal-soft);backdrop-filter:blur(10px)}
+.why-card:hover{transform:translateY(-10px);background:rgba(255,255,255,.12);box-shadow:0 25px 50px rgba(127,207,203,.2)}
+.why-icon{width:75px;height:75px;line-height:75px;margin:0 auto 20px;border-radius:20px;background:rgba(127,207,203,.15);color:var(--teal-soft);font-size:1.8rem;border:1px solid rgba(127,207,203,.3);transition:var(--t)}
+.why-card:hover .why-icon{transform:rotate(-10deg) scale(1.1);background:var(--teal);color:#fff}
+.why-card h4{font-size:1.15rem;color:#fff;margin-bottom:12px}
+.why-card p{font-size:.9rem;color:rgba(255,255,255,.8);line-height:1.7}
+
+/* EQUIPO */
+.team{background:linear-gradient(135deg,#E8F2F2 0%,#DCEAEA 100%);position:relative;overflow:hidden}
+.team::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(15,107,106,.18),transparent 70%);border-radius:50%}
+.team::after{content:'';position:absolute;bottom:-120px;left:-80px;width:420px;height:420px;background:radial-gradient(circle,rgba(169,180,194,.28),transparent 70%);border-radius:50%}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1120px;margin:0 auto;position:relative;z-index:2}
+.team-card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(15,107,106,.14);transition:var(--t);text-align:left;border-top:5px solid var(--teal)}
+.team-card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(15,107,106,.22)}
+.team-head{display:flex;align-items:center;gap:22px;padding:32px 34px 26px;background:linear-gradient(135deg,var(--navy) 0%,var(--teal-dark) 100%);color:#fff;position:relative}
+.team-photo-wrap{position:relative;width:130px;height:130px;flex-shrink:0;border-radius:50%;overflow:hidden;border:4px solid var(--teal-soft);background:linear-gradient(135deg,var(--teal),var(--navy));display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,.35)}
+.team-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;inset:0;z-index:2;display:block}
+.team-initials{font-family:'Montserrat';font-weight:900;font-size:2.2rem;color:#fff;letter-spacing:1px;z-index:1}
+.team-head h3{font-size:1.35rem;color:#fff;margin-bottom:6px;line-height:1.2}
+.team-head .role{font-family:'Montserrat';font-weight:700;font-size:.76rem;color:var(--teal-soft);letter-spacing:1.6px;text-transform:uppercase;display:block}
+.team-body{padding:28px 34px 34px}
+.team-block{margin-bottom:22px}
+.team-block:last-child{margin-bottom:0}
+.team-block h4{font-family:'Montserrat';font-size:.8rem;font-weight:800;color:var(--teal);letter-spacing:1.6px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.team-block h4 i{font-size:.95rem;color:var(--teal-light)}
+.team-block ul{list-style:none;padding:0}
+.team-block ul li{font-size:.9rem;color:var(--text-dark);padding:5px 0 5px 20px;position:relative;line-height:1.6}
+.team-block ul li::before{content:'';position:absolute;left:0;top:12px;width:8px;height:8px;background:var(--teal-soft);border-radius:50%}
+
+/* CÓMO FUNCIONA */
+.process{background:linear-gradient(135deg,#E8F2F2 0%,#DCEAEA 100%);position:relative}
+.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px;position:relative;z-index:2}
+.process-card{padding:45px 28px;border-radius:18px;text-align:center;transition:var(--t);position:relative;box-shadow:0 10px 25px rgba(15,107,106,.15);overflow:hidden}
+.process-card:nth-child(1){background:linear-gradient(135deg,#0F6B6A,#1A8A88)}
+.process-card:nth-child(2){background:linear-gradient(135deg,#1A8A88,#7FCFCB)}
+.process-card:nth-child(3){background:linear-gradient(135deg,#7A8694,#A9B4C2)}
+.process-card:nth-child(4){background:linear-gradient(135deg,#1A2B49,#0F1A2E)}
+.process-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 25px 45px rgba(0,0,0,.3)}
+.process-num{font-family:'Montserrat';font-size:3rem;font-weight:900;line-height:1;color:rgba(255,255,255,.4);margin-bottom:12px;transition:var(--t)}
+.process-card:hover .process-num{color:rgba(255,255,255,.7);transform:scale(1.1)}
+.process-card h3{font-size:1.2rem;color:#fff;margin-bottom:12px}
+.process-card p{font-size:.9rem;color:rgba(255,255,255,.92);line-height:1.7}
+
+/* TESTIMONIOS */
+.testimonials{background:linear-gradient(135deg,#0A4D4C 0%,#1A2B49 50%,#0F6B6A 100%);color:#fff;position:relative}
+.testimonials::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 15% 20%,rgba(127,207,203,.25),transparent 40%),radial-gradient(circle at 85% 80%,rgba(169,180,194,.2),transparent 40%)}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;position:relative;z-index:2}
+.test-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:40px 30px;border-radius:20px;text-align:left;backdrop-filter:blur(10px);transition:var(--t)}
+.test-card:hover{background:rgba(255,255,255,.15);transform:translateY(-8px);border-color:var(--teal-soft)}
+.test-card i.quote{font-size:2rem;color:var(--teal-soft);margin-bottom:16px;display:block}
+.test-card p{font-size:.95rem;color:rgba(255,255,255,.9);line-height:1.75;font-style:italic;margin-bottom:18px}
+.test-author{font-family:'Montserrat';font-weight:700;font-size:.85rem;color:var(--teal-soft);letter-spacing:1px}
+
+/* FAQ */
+.faq{background:linear-gradient(135deg,#E8F2F2 0%,#D5E5E5 100%);position:relative}
+.faq-list{max-width:900px;margin:0 auto;position:relative;z-index:2;text-align:left}
+.faq-item{background:#fff;border-radius:14px;margin-bottom:16px;box-shadow:0 8px 20px rgba(15,107,106,.08);overflow:hidden;border-left:4px solid var(--teal);transition:box-shadow .3s ease}
+.faq-item:hover{box-shadow:0 12px 28px rgba(15,107,106,.15)}
+.faq-item.open{box-shadow:0 15px 35px rgba(15,107,106,.18)}
+.faq-question{padding:22px 28px;font-family:'Montserrat';font-weight:700;font-size:1rem;color:var(--navy);display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:var(--t);gap:16px}
+.faq-question:hover{background:var(--light-bg)}
+.faq-question span{flex:1;text-align:left}
+.faq-question i{color:var(--teal);transition:transform .4s var(--ease-out);flex-shrink:0}
+.faq-item.open .faq-question i{transform:rotate(180deg)}
+.faq-item.open .faq-question{background:var(--light-bg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .5s var(--ease-out),padding .4s ease;font-size:.95rem;color:var(--text-light);line-height:1.75;padding:0 28px;text-align:left}
+.faq-item.open .faq-answer{max-height:600px;padding:0 28px 22px}
+
+/* CONTACTO */
+.contact{background:linear-gradient(135deg,#0A4D4C 0%,#1A2B49 50%,#0F6B6A 100%);color:#fff;position:relative}
+.contact::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 15% 20%,rgba(127,207,203,.25),transparent 40%),radial-gradient(circle at 85% 80%,rgba(169,180,194,.2),transparent 40%)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;position:relative;z-index:2;align-items:start}
+.contact-info{text-align:center}
+.contact-info h3{font-size:1.9rem;color:#fff;margin-bottom:14px}
+.contact-info>p{color:rgba(255,255,255,.85);margin-bottom:36px;font-size:1rem}
+.contact-item{display:flex;flex-direction:column;align-items:center;gap:12px;padding:24px 20px;border-radius:16px;margin-bottom:16px;transition:var(--t);backdrop-filter:blur(10px);background:linear-gradient(135deg,rgba(15,107,106,.5),rgba(15,107,106,.25));border:1px solid rgba(127,207,203,.35)}
+.contact-item:nth-child(3){background:linear-gradient(135deg,rgba(26,138,136,.5),rgba(15,107,106,.3));border-color:rgba(127,207,203,.4)}
+.contact-item:nth-child(4){background:linear-gradient(135deg,rgba(169,180,194,.35),rgba(122,134,148,.25));border-color:rgba(208,213,219,.35)}
+.contact-item:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.contact-item i{font-size:1.6rem;color:var(--teal-soft)}
+.contact-item h4{font-size:1.05rem;color:#fff;margin-bottom:5px}
+.contact-item p{font-size:.9rem;color:rgba(255,255,255,.9);line-height:1.6}
+.contact-form{background:linear-gradient(135deg,#fff,#EEF5F5);padding:45px 40px;border-radius:22px;box-shadow:0 30px 60px rgba(0,0,0,.4);text-align:left;border-top:5px solid var(--teal-soft)}
+.contact-form h3{color:var(--navy);margin-bottom:26px;font-size:1.55rem;text-align:center}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-family:'Montserrat';font-weight:600;font-size:.85rem;color:var(--navy);margin-bottom:7px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:13px 15px;border:2px solid #DCE5E5;border-radius:10px;font-family:'Open Sans';font-size:.95rem;transition:var(--t);background:#F5FAFA;color:var(--text-dark)}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--teal);background:#fff;box-shadow:0 0 0 4px rgba(15,107,106,.15)}
+.form-group textarea{height:120px;resize:vertical;font-family:'Open Sans'}
+.contact-form .btn{width:100%;justify-content:center}
+.map-wrap{margin-top:24px;border-radius:16px;overflow:hidden;box-shadow:0 15px 35px rgba(0,0,0,.35);border:2px solid rgba(127,207,203,.4);position:relative;background:#0A4D4C}
+.map-wrap iframe{width:100%;height:280px;display:block;border:0;filter:grayscale(.15) contrast(1.05)}
+.map-caption{padding:12px 18px;background:linear-gradient(135deg,var(--navy),var(--teal-dark));color:rgba(255,255,255,.9);font-family:'Montserrat';font-weight:600;font-size:.78rem;letter-spacing:1.2px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:10px}
+.map-caption i{color:var(--teal-soft)}
+
+/* FOOTER */
+footer{background:linear-gradient(135deg,#050B16 0%,#0F1A2E 50%,#0A4D4C 100%);color:#fff;padding:80px 0 30px;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 10% 30%,rgba(15,107,106,.35),transparent 40%),radial-gradient(circle at 90% 70%,rgba(127,207,203,.15),transparent 40%)}
+footer::after{content:'';position:absolute;top:0;left:0;width:100%;height:5px;background:linear-gradient(90deg,var(--teal),var(--silver),var(--teal-soft),var(--teal))}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:45px;margin-bottom:55px;text-align:center;position:relative;z-index:2}
+.footer-col h4{font-size:1.05rem;margin-bottom:22px;padding-bottom:12px;position:relative;display:inline-block;letter-spacing:1px;color:#fff}
+.footer-col h4::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:38px;height:3px;background:var(--teal-soft);border-radius:2px}
+.footer-col p{font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.75;margin-bottom:14px}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:.88rem;color:rgba(255,255,255,.75);display:inline-flex;align-items:center;gap:9px;transition:var(--t);cursor:pointer}
+.footer-col ul li a:hover{color:#fff;transform:translateX(4px)}
+.footer-col ul li a i{font-size:.68rem;color:var(--teal-soft)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:26px;text-align:center;font-size:.85rem;color:rgba(255,255,255,.6);position:relative;z-index:2}
+.socials{display:flex;justify-content:center;gap:14px;margin-top:18px}
+.socials a{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:var(--t);color:#fff;background:linear-gradient(135deg,rgba(15,107,106,.6),rgba(26,43,73,.6));border:1px solid rgba(127,207,203,.3)}
+.socials a:hover{transform:translateY(-5px) scale(1.1);background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-color:var(--teal-soft)}
+
+/* FLOATING */
+.wpp{position:fixed;bottom:30px;right:30px;width:64px;height:64px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 8px 25px rgba(37,211,102,.55);z-index:998;animation:pulse 2.2s infinite}
+.wpp:hover{transform:scale(1.1) rotate(8deg);animation:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.7)}70%{box-shadow:0 0 0 22px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.to-top{position:fixed;bottom:30px;left:30px;width:50px;height:50px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;z-index:998;opacity:0;visibility:hidden;transition:var(--t);box-shadow:0 10px 25px rgba(15,107,106,.5)}
+.to-top.show{opacity:1;visibility:visible}
+.to-top:hover{transform:translateY(-5px) scale(1.1)}
+
+/* ============ OVERLAY DE SERVICIOS ============ */
+.serv-overlay{
+  position:fixed;
+  inset:0;
+  z-index:3000;
+  background:linear-gradient(135deg,#0A4D4C 0%,#1A2B49 50%,#0F6B6A 100%);
+  overflow-y:auto;
+  opacity:0;
+  visibility:hidden;
+  transform:scale(1.05);
+  transition:opacity .5s cubic-bezier(.16,1,.3,1),visibility .5s,transform .5s cubic-bezier(.16,1,.3,1);
+}
+.serv-overlay.open{opacity:1;visibility:visible;transform:scale(1)}
+.serv-overlay::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 15% 20%,rgba(127,207,203,.25),transparent 45%),radial-gradient(circle at 85% 80%,rgba(169,180,194,.2),transparent 45%);pointer-events:none}
+.serv-overlay-inner{position:relative;z-index:2;min-height:100vh;padding:100px 24px 60px;max-width:1100px;margin:0 auto}
+
+.serv-close{
+  position:fixed;
+  top:24px;
+  right:24px;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  border:2px solid rgba(127,207,203,.5);
+  color:#fff;
+  font-size:1.3rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:3010;
+  transition:all .4s var(--ease-out);
+  backdrop-filter:blur(10px);
+}
+.serv-close:hover{background:var(--teal-soft);color:var(--navy);transform:rotate(90deg) scale(1.1);border-color:var(--teal-soft)}
+
+.serv-head{text-align:center;margin-bottom:60px;position:relative}
+.serv-head-icon{
+  width:130px;height:130px;margin:0 auto 24px;border-radius:32px;
+  background:linear-gradient(135deg,var(--teal),var(--teal-dark));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:3.2rem;position:relative;overflow:hidden;
+  box-shadow:0 25px 55px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.2);
+  border:1px solid rgba(127,207,203,.3);
+  animation:iconEnter .8s var(--ease-out) both .1s;
+}
+@keyframes iconEnter{from{opacity:0;transform:translateY(-30px) scale(.8) rotate(-15deg)}to{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+.serv-head-icon::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);transform:translateX(-100%);animation:iconShine 3s ease-in-out infinite .8s}
+@keyframes iconShine{0%,60%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.serv-head-tag{
+  display:inline-block;padding:8px 22px;
+  background:rgba(127,207,203,.15);border:1px solid rgba(127,207,203,.5);
+  border-radius:50px;color:var(--teal-soft);
+  font-family:'Montserrat';font-weight:700;font-size:.72rem;
+  letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;
+  backdrop-filter:blur(10px);animation:fadeUp .7s var(--ease-out) both .3s;
+}
+.serv-head h2{
+  font-size:3rem;color:#fff;font-weight:900;letter-spacing:-1px;
+  margin-bottom:20px;line-height:1.1;text-shadow:0 6px 20px rgba(0,0,0,.4);
+  animation:fadeUp .7s var(--ease-out) both .4s;font-family:'Montserrat';
+}
+.serv-head p.lead{
+  font-size:1.1rem;color:rgba(255,255,255,.92);
+  max-width:750px;margin:0 auto;font-weight:300;line-height:1.75;
+  animation:fadeUp .7s var(--ease-out) both .5s;
+}
+
+.serv-blocks{display:grid;grid-template-columns:1fr 1fr;gap:32px;text-align:left}
+.serv-block{
+  background:rgba(255,255,255,.96);
+  border-radius:22px;padding:44px 40px;
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+  border-top:5px solid var(--teal);
+  position:relative;overflow:hidden;
+  opacity:0;transform:translateY(60px);
+  transition:opacity .8s var(--ease-out),transform .8s var(--ease-out);
+}
+.serv-block.benefits{border-top-color:var(--navy)}
+.serv-block.revealed{opacity:1;transform:translateY(0)}
+.serv-block::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(120deg,transparent,rgba(127,207,203,.18),transparent);transition:left .9s ease}
+.serv-block:hover::before{left:100%}
+.serv-block:hover{transform:translateY(-6px);box-shadow:0 30px 65px rgba(0,0,0,.45)}
+
+.serv-block-head{
+  display:flex;align-items:center;gap:16px;margin-bottom:28px;
+  padding-bottom:20px;border-bottom:2px solid rgba(15,107,106,.12);
+}
+.serv-block-icon{
+  width:60px;height:60px;border-radius:16px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--teal),var(--teal-dark));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;box-shadow:0 10px 25px rgba(15,107,106,.35);
+  transition:transform .5s var(--ease-out);
+}
+.serv-block.benefits .serv-block-icon{background:linear-gradient(135deg,var(--navy),var(--navy-dark));box-shadow:0 10px 25px rgba(26,43,73,.35)}
+.serv-block:hover .serv-block-icon{transform:rotate(-8deg) scale(1.08)}
+.serv-block-head h3{font-size:1.5rem;color:var(--navy);font-weight:800;line-height:1.2;font-family:'Montserrat'}
+
+.serv-block ul{list-style:none;padding:0;margin:0}
+.serv-block ul li{
+  font-size:.98rem;color:var(--text-dark);
+  padding:14px 0 14px 40px;position:relative;line-height:1.65;
+  border-bottom:1px dashed rgba(15,107,106,.15);
+  transition:all .35s var(--ease-out);
+  opacity:0;transform:translateX(-15px);
+}
+.serv-block ul li:last-child{border-bottom:none}
+.serv-block.revealed ul li{opacity:1;transform:translateX(0)}
+.serv-block.revealed ul li:nth-child(1){transition-delay:.15s}
+.serv-block.revealed ul li:nth-child(2){transition-delay:.23s}
+.serv-block.revealed ul li:nth-child(3){transition-delay:.31s}
+.serv-block.revealed ul li:nth-child(4){transition-delay:.39s}
+.serv-block.revealed ul li:nth-child(5){transition-delay:.47s}
+.serv-block.revealed ul li:nth-child(6){transition-delay:.55s}
+.serv-block ul li::before{
+  content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;
+  position:absolute;left:0;top:16px;width:24px;height:24px;line-height:24px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--teal),var(--teal-light));
+  color:#fff;font-size:.72rem;text-align:center;
+  box-shadow:0 6px 14px rgba(15,107,106,.3);
+  transition:all .35s var(--ease-out);
+}
+.serv-block.benefits ul li::before{background:linear-gradient(135deg,var(--navy),var(--navy-dark));box-shadow:0 6px 14px rgba(26,43,73,.3)}
+.serv-block ul li:hover::before{transform:scale(1.15) rotate(-8deg)}
+.serv-block ul li:hover{color:var(--teal-dark);padding-left:44px}
+
+.serv-cta{
+  margin-top:60px;text-align:center;
+  opacity:0;transform:translateY(40px);
+  transition:all .8s var(--ease-out) .3s;
+}
+.serv-cta.revealed{opacity:1;transform:translateY(0)}
+.serv-cta-icon{
+  width:90px;height:90px;line-height:90px;margin:0 auto 22px;
+  border-radius:50%;background:rgba(127,207,203,.15);
+  border:2px solid rgba(127,207,203,.4);color:var(--teal-soft);
+  font-size:2.4rem;backdrop-filter:blur(10px);
+  animation:ctaPulse 2.5s ease-in-out infinite;
+}
+@keyframes ctaPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(127,207,203,.5)}50%{transform:scale(1.05);box-shadow:0 0 0 20px rgba(127,207,203,0)}}
+.serv-cta h3{font-size:2rem;color:#fff;margin-bottom:14px;font-weight:900;letter-spacing:-.5px;font-family:'Montserrat'}
+.serv-cta h3 span{background:linear-gradient(135deg,var(--teal-soft),var(--silver-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.serv-cta p{font-size:1rem;color:rgba(255,255,255,.9);margin-bottom:30px;line-height:1.7;max-width:600px;margin-left:auto;margin-right:auto}
+.serv-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+body.no-scroll{overflow:hidden}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .hero h1{font-size:2.7rem}
+  .contact-grid,.brands-grid,.team-grid{grid-template-columns:1fr;gap:40px}
+  .contact-form{padding:35px 25px}
+  .logo-img-hero{height:160px}
+  .serv-blocks{grid-template-columns:1fr;gap:26px}
+  .serv-head h2{font-size:2.2rem}
+  .serv-block{padding:34px 28px}
+  .serv-overlay-inner{padding:90px 20px 50px}
+}
+@media(max-width:768px){
+  .section{padding:75px 0}
+  .section-title h2{font-size:1.9rem}
+  .nav-links{position:fixed;top:0;right:-100%;width:82%;height:100vh;background:linear-gradient(180deg,var(--navy),var(--teal-dark));flex-direction:column;justify-content:center;gap:24px;transition:var(--t);z-index:1001;padding:40px 20px}
+  .nav-links.open{right:0}
+  .nav-links a{color:#fff!important;font-size:1.1rem}
+  .menu-toggle{display:block}
+  .hero h1{font-size:1.9rem}
+  .hero p{font-size:.95rem}
+  .logo-img-header{height:46px!important}
+  .logo-img-hero{height:130px}
+  .trust-items{gap:20px}
+  .trust-item{font-size:.65rem}
+  .to-top{bottom:100px;left:20px}
+  .brand-card{padding:35px 28px}
+  .brand-logo-wrap{height:90px}
+  .team-head{flex-direction:column;text-align:center;gap:16px}
+  .team-body{padding:24px 26px 28px}
+  .team-photo-wrap{width:110px;height:110px}
+  .serv-head h2{font-size:1.7rem}
+  .serv-head-icon{width:100px;height:100px;font-size:2.4rem;border-radius:26px}
+  .serv-block{padding:28px 22px}
+  .serv-block-head h3{font-size:1.2rem}
+  .serv-block-icon{width:50px;height:50px;font-size:1.3rem}
+  .serv-close{top:16px;right:16px;width:46px;height:46px;font-size:1.1rem}
+  .serv-overlay-inner{padding:80px 16px 40px}
+  .serv-cta h3{font-size:1.5rem}
+  .faq-question{padding:18px 20px;font-size:.92rem}
+  .faq-answer{padding:0 20px}
+  .faq-item.open .faq-answer{padding:0 20px 20px}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container">
+    <nav>
+      <a href="#inicio" class="logo" aria-label="FIDUS Auditoría Externa">
+        <img src="fidus-logo.png" alt="FIDUS" class="logo-img-header" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-fallback-header">FIDUS<small>AUDITORÍA EXTERNA</small></div>
+      </a>
+      <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <li><a href="#proceso">Cómo Funciona</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacto" class="nav-cta">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-orb orb-1"></div>
+  <div class="hero-orb orb-2"></div>
+  <div class="hero-orb orb-3"></div>
+  <div class="hero-content">
+    <img src="fidus-logo.png" alt="FIDUS" class="logo-img-hero" onerror="this.style.display='none';">
+    <div class="hero-badge"><i class="fas fa-award"></i> Firma Autorizada SCVS · NIA · NIIF</div>
+    <h1>Confianza que Sustenta <span>Decisiones Estratégicas</span></h1>
+    <p>Auditoría externa de alta calidad bajo Normas Internacionales. Acompañamiento cercano para empresas que buscan rigor técnico y cumplimiento normativo en Ecuador.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Solicita una Consulta</a>
+      <a href="#servicios" class="btn btn-outline"><i class="fas fa-arrow-right"></i> Ver Servicios</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item"><i class="fas fa-shield-alt"></i> Normas NIA</div>
+      <div class="trust-item"><i class="fas fa-book"></i> NIIF Aplicadas</div>
+      <div class="trust-item"><i class="fas fa-balance-scale"></i> SCVS & SRI</div>
+      <div class="trust-item"><i class="fas fa-certificate"></i> Código IESBA</div>
+    </div>
+  </div>
+</div>
+
+<section class="section about" id="nosotros">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Quiénes Somos</span>
+      <h2>Dos Marcas, Una Misma Práctica Profesional</h2>
+      <p>CAF SAS integra los servicios contables, de auditoría y tributarios; FIDUS concentra la ejecución especializada de la auditoría externa independiente.</p>
+    </div>
+    <div class="brands-grid">
+      <div class="brand-card brand-caf">
+        <div class="brand-logo-wrap"><img src="caf-logo.png" alt="CAF"></div>
+        <h3>Servicios profesionales integrados</h3>
+        <p>Firma de servicios profesionales integrados en contabilidad, auditoría y tributación. Atendemos empresas de bienes y servicios en todo el país, con equipos que combinan experiencia operativa y dominio de la normativa ecuatoriana vigente.</p>
+        <ul class="brand-list">
+          <li>Contabilidad y outsourcing</li>
+          <li>Asesoría tributaria y laboral</li>
+          <li>Consultoría financiera y NIIF</li>
+        </ul>
+      </div>
+      <div class="brand-card brand-fidus">
+        <div class="brand-logo-wrap"><img src="fidus-logo.png" alt="FIDUS"></div>
+        <h3>Confianza que sustenta decisiones estratégicas</h3>
+        <p>Firma especializada en servicios integrados de contabilidad, auditoría y asesoría tributaria. Prestamos atención integral a empresas de bienes y servicios en todo el país, combinando excelencia operativa con un profundo conocimiento en NIIF, legislación fiscal, tributaria y contable.</p>
+        <ul class="brand-list">
+          <li>Auditoría de estados financieros</li>
+          <li>Auditoría tributaria y anexos</li>
+          <li>Revisión de control interno</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="servicios">
+  <div class="container">
+    <div class="section-title light">
+      <span class="eyebrow">Qué Hacemos</span>
+      <h2>Nuestros Servicios</h2>
+      <p>Soluciones integrales de auditoría, contabilidad y tributación adaptadas a las necesidades de su empresa.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card" data-service="auditoria-externa">
+        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Auditoría Externa</h3>
+        <p>Dictamen sobre estados financieros bajo NIA, con informe a la Superintendencia de Compañías.</p>
+        <span class="card-more">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="service-card" data-service="auditoria-tributaria">
+        <div class="service-icon"><i class="fas fa-search-dollar"></i></div>
+        <h3>Auditoría Tributaria</h3>
+        <p>Revisión integral del cumplimiento ante el SRI: formularios, anexos y conciliación tributaria.</p>
+        <span class="card-more">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="service-card" data-service="control-interno">
+        <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+        <h3>Control Interno</h3>
+        <p>Evaluación de procesos y ciclos operativos, con recomendaciones priorizadas por riesgo.</p>
+        <span class="card-more">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="service-card" data-service="asesoria-niif">
+        <div class="service-icon"><i class="fas fa-book-open"></i></div>
+        <h3>Asesoría NIIF</h3>
+        <p>Aplicación y transición de normas, incluida la NIIF 18 de presentación y revelación.</p>
+        <span class="card-more">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="service-card" data-service="consultoria-financiera">
+        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Consultoría Financiera</h3>
+        <p>Análisis de estructura, indicadores, presupuestos y viabilidad de proyectos.</p>
+        <span class="card-more">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="service-card" data-service="capacitacion">
+        <div class="service-icon"><i class="fas fa-users"></i></div>
+        <h3>Capacitación In Company</h3>
+        <p>Programas contables, financieros y tributarios diseñados para su equipo.</p>
+        <span class="card-more">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="service-card" data-service="contabilidad">
+        <div class="service-icon"><i class="fas fa-calculator"></i></div>
+        <h3>Contabilidad y Outsourcing</h3>
+        <p>Servicios contables integrales, teneduría de libros, procesamiento de nómina y control presupuestario.</p>
+        <span class="card-more">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="service-card" data-service="declaraciones">
+        <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h3>Declaraciones Tributarias</h3>
+        <p>Preparación y presentación de declaraciones de IVA, Impuesto a la Renta y anexos ante el SRI.</p>
+        <span class="card-more">Ver detalle <i class="fas fa-arrow-right"></i></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section why">
+  <div class="container">
+    <div class="section-title light">
+      <span class="eyebrow">Diferenciales</span>
+      <h2>Por Qué Elegirnos</h2>
+      <p>Razones concretas por las que nuestros clientes confían en FIDUS.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon"><i class="fas fa-handshake"></i></div><h4>Interlocución Directa con el Socio</h4><p>Su empresa no habla con un intermediario: el socio que firma el dictamen participa en las reuniones clave.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-search-dollar"></i></div><h4>Enfoque Tributario Integrado</h4><p>La auditoría financiera se cruza con el cumplimiento ante el SRI, anticipando contingencias antes del control.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-book-open"></i></div><h4>Actualización Normativa Permanente</h4><p>Aplicamos las normas vigentes y le explicamos su impacto en términos de negocio, no solo técnicos.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-users"></i></div><h4>Equipo de Amplia Trayectoria</h4><p>Contamos con profesionales con años de experiencia en auditoría, consultoría financiera y tributaria.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section team" id="equipo">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Nuestro Equipo</span>
+      <h2>Quién Firma y Quién Ejecuta su Auditoría</h2>
+      <p>La calidad de una auditoría depende de las personas que la lideran. Estos son los socios responsables de su encargo.</p>
+    </div>
+    <div class="team-grid">
+
+      <article class="team-card">
+        <div class="team-head">
+          <div class="team-photo-wrap">
+            <span class="team-initials">JB</span>
+            <img src="janneth.png" alt="Janneth Burbano Coral" onerror="this.style.display='none';">
+          </div>
+          <div>
+            <h3>Janneth Burbano Coral</h3>
+            <span class="role">Socio — Auditoría y Consultoría Tributaria</span>
+          </div>
+        </div>
+        <div class="team-body">
+          <div class="team-block">
+            <h4><i class="fas fa-graduation-cap"></i> Formación</h4>
+            <ul>
+              <li>Contador Público Autorizado (CPA) — Universidad Metropolitana</li>
+              <li>Doctora Honoris Causa Claustro — ICTH México</li>
+              <li>Experto Tributario — Colegio de Contadores de Pichincha</li>
+            </ul>
+          </div>
+          <div class="team-block">
+            <h4><i class="fas fa-briefcase"></i> Experiencia Profesional</h4>
+            <ul>
+              <li>30 años como Asesora contable, financiera y tributaria</li>
+              <li>Gerente General en JLLP Cía. Ltda. y CAF Consultores</li>
+              <li>Gerente Laboral, Societaria y Tributaria</li>
+              <li>Experta Laboral, Societaria y Tributaria</li>
+            </ul>
+          </div>
+          <div class="team-block">
+            <h4><i class="fas fa-chalkboard-teacher"></i> Experiencia Docente</h4>
+            <ul>
+              <li>Socia — Contadora Pública Autorizada</li>
+              <li>Capacitadora en temas financieros en gremios y empresas privadas</li>
+              <li>Más de 10.000 colegas capacitados</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="team-card">
+        <div class="team-head">
+          <div class="team-photo-wrap">
+            <span class="team-initials">MB</span>
+            <img src="mauricio.png" alt="Mauricio Báez Moncayo" onerror="this.style.display='none';">
+          </div>
+          <div>
+            <h3>Mauricio Báez Moncayo</h3>
+            <span class="role">Socio — Auditoría</span>
+          </div>
+        </div>
+        <div class="team-body">
+          <div class="team-block">
+            <h4><i class="fas fa-graduation-cap"></i> Formación</h4>
+            <ul>
+              <li>Contador Público Autorizado (CPA) — Universidad Tecnológica Equinoccial</li>
+              <li>Máster en Administración y Dirección de Empresas — Universidad Europea del Atlántico</li>
+              <li>Experto en Control Tributario y NIIF — Colegio de Contadores de Pichincha</li>
+            </ul>
+          </div>
+          <div class="team-block">
+            <h4><i class="fas fa-briefcase"></i> Experiencia Profesional</h4>
+            <ul>
+              <li>25 años como Contador General en empresas de bienes y servicios</li>
+              <li>Asesor contable, financiero y tributario de empresas en todo el país</li>
+              <li>Especialista en NIIF y en cumplimiento ante el SRI y la Superintendencia de Compañías</li>
+            </ul>
+          </div>
+          <div class="team-block">
+            <h4><i class="fas fa-chalkboard-teacher"></i> Experiencia Docente</h4>
+            <ul>
+              <li>Capacitador por más de 9 años en temas contables, financieros y tributarios</li>
+              <li>Director del canal ExcelBlue, con más de 100.000 suscriptores en YouTube</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section process" id="proceso">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Nuestro Proceso</span>
+      <h2>Cómo Funciona</h2>
+      <p>Trabajamos con un enfoque estructurado y eficiente para garantizar soluciones óptimas a nuestros clientes.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="process-num">01</div><h3>Análisis y Diagnóstico</h3><p>Comenzamos con una reunión para entender sus necesidades y evaluar su situación financiera, contable o tributaria. Identificamos oportunidades de mejora y posibles riesgos.</p></div>
+      <div class="process-card"><div class="process-num">02</div><h3>Planificación Estratégica</h3><p>Con base en el diagnóstico, diseñamos un plan de acción personalizado, adaptado a los objetivos y características de su empresa.</p></div>
+      <div class="process-card"><div class="process-num">03</div><h3>Ejecución</h3><p>Ponemos en marcha las estrategias acordadas, optimizando procesos financieros, tributarios y administrativos para garantizar el cumplimiento normativo y la eficiencia operativa.</p></div>
+      <div class="process-card"><div class="process-num">04</div><h3>Informe y Cierre</h3><p>Discusión de hallazgos con la administración, emisión del dictamen y entrega de la carta a la gerencia con recomendaciones concretas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonials" id="testimonios">
+  <div class="container">
+    <div class="section-title light">
+      <span class="eyebrow">Testimonio</span>
+      <h2>Lo que Dicen de Nosotros</h2>
+      <p>La confianza de nuestros clientes es nuestro mejor respaldo.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <i class="fas fa-quote-left quote"></i>
+        <p>Gracias a FIDUS, logramos optimizar nuestros procesos financieros y mejorar nuestra rentabilidad. Su equipo de expertos nos brindó una asesoría clara y efectiva, lo que nos ha permitido tomar decisiones estratégicas con mayor confianza.</p>
+        <div class="test-author">— Cliente Corporativo</div>
+      </div>
+      <div class="test-card">
+        <i class="fas fa-quote-left quote"></i>
+        <p>Desde que contratamos sus servicios de auditoría, nuestra empresa ha mejorado en transparencia y cumplimiento normativo. Su atención personalizada y conocimiento del sector financiero nos ha dado tranquilidad y seguridad en cada proceso.</p>
+        <div class="test-author">— Gerente General</div>
+      </div>
+      <div class="test-card">
+        <i class="fas fa-quote-left quote"></i>
+        <p>El equipo de FIDUS nos ayudó a implementar mejores controles internos en nuestra empresa, lo que nos ha permitido optimizar la gestión de inventarios y finanzas. Su asesoría fue clave para modernizar nuestros sistemas y mejorar la productividad.</p>
+        <div class="test-author">— Director Financiero</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ AMPLIADO ============ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Preguntas Frecuentes</span>
+      <h2>¿Tienes Dudas?</h2>
+      <p>Resolvemos las preguntas más comunes sobre nuestros servicios. Si no encuentras la tuya, contáctanos directamente.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Qué tipo de servicios de auditoría ofrecen?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Ofrecemos auditoría externa de estados financieros bajo NIA, auditoría tributaria, revisión de control interno y asesoría en NIIF. Todos nuestros trabajos se ejecutan con estándares internacionales y cumplimiento de la normativa ecuatoriana vigente.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Quién firma el dictamen de auditoría?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">El dictamen es firmado por el socio responsable del encargo, quien también participa en las reuniones clave con la administración de su empresa. No hay intermediarios: usted trata directamente con quien firma.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Cómo garantizan la independencia del auditor?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">El equipo asignado suscribe declaraciones anuales de independencia conforme al Código de Ética del IESBA. No prestamos servicios que comprometan la objetividad del dictamen sobre la compañía auditada, y rotamos personal cuando es necesario.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Cuál es el alcance de una auditoría externa?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Evaluamos los estados financieros completos (situación financiera, resultados, cambios en el patrimonio, flujos de efectivo y notas) y los ciclos significativos del negocio, incluyendo pruebas sustantivas, confirmaciones a terceros y evaluación de riesgos.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Qué entregables recibo al final del encargo?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Recibe el dictamen de auditoría, una carta a la gerencia con hallazgos de control interno y recomendaciones, el informe de cumplimiento tributario (cuando aplique) y los anexos y papeles de respaldo a disposición de los organismos de control.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Cuánto tiempo toma una auditoría externa?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Depende del tamaño y complejidad de su empresa. En promedio, un encargo completo toma entre 4 y 6 meses: planificación, evaluación de riesgos, auditoría preliminar, auditoría final sobre saldos de cierre y entrega del informe. El cronograma definitivo se acuerda con la administración antes de iniciar.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Cómo se determina el honorario de la auditoría?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">El honorario se calcula según el tamaño del encargo, el volumen de transacciones, la complejidad de las operaciones, el número de establecimientos y los plazos de entrega. Siempre entregamos una cotización clara antes de firmar el contrato, sin costos ocultos ni cargos adicionales no previstos.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Trabajan con empresas de cualquier tamaño?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Sí. Atendemos desde pequeñas y medianas empresas hasta compañías grandes y grupos empresariales. Adaptamos el equipo y la metodología según la naturaleza del negocio, y contamos con experiencia en sectores de bienes, servicios, construcción, agropecuario, comercial e industrial.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Ofrecen servicios fuera de Quito?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Sí. Nuestras oficinas están en Quito, pero atendemos clientes en todo el Ecuador. Realizamos visitas a las instalaciones del cliente y coordinamos reuniones de avance presenciales o virtuales según sea necesario.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Cómo garantizan la confidencialidad de mi información?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Toda la información que recibimos está protegida por estrictos acuerdos de confidencialidad firmados por cada miembro del equipo. Cumplimos con el Código de Ética del IESBA y aplicamos medidas de seguridad informática para el manejo de documentación sensible.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Qué normativa aplican en sus trabajos?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Aplicamos Normas Internacionales de Auditoría (NIA) emitidas por el IAASB, Normas Internacionales de Información Financiera (NIIF), la Ley de Compañías, la normativa de la Superintendencia de Compañías (SCVS) y la normativa tributaria vigente emitida por el SRI.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>¿Cómo empiezo a trabajar con FIDUS?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">El primer paso es una reunión inicial gratuita donde conocemos su empresa y necesidades. Luego le enviamos una propuesta formal con alcance, cronograma y honorarios. Una vez aceptada, firmamos el contrato y comenzamos la planificación del encargo. Puede contactarnos por WhatsApp, correo o el formulario del sitio.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contacto">
+  <div class="container">
+    <div class="section-title light">
+      <span class="eyebrow">Hablemos</span>
+      <h2>Contáctanos</h2>
+      <p>Quedamos a su disposición para ampliar cualquier punto de esta propuesta y coordinar una reunión.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Información de Contacto</h3>
+        <p>Estamos listos para atender sus requerimientos de auditoría y consultoría.</p>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h4>Oficinas</h4><p>Av. Amazonas y Naciones Unidas<br>Edificio Unicornio II, Torre Empresarial, Of. 1105<br>Quito, Ecuador</p></div></div>
+        <div class="contact-item"><i class="fas fa-phone-alt"></i><div><h4>Teléfono / WhatsApp</h4><p>097 904 5062 · 099 252 7245</p></div></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i><div><h4>Correo Electrónico</h4><p>fidusauditores@gmail.com<br>jannethburbano@asesorescaf.com</p></div></div>
+
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Av.+Amazonas+y+Naciones+Unidas,+Edificio+Unicornio+II,+Quito,+Ecuador&output=embed" title="Ubicación FIDUS" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <div class="map-caption"><i class="fas fa-location-dot"></i> Edificio Unicornio II · Of. 1105 · Quito</div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Solicita una reunión</h3>
+        <form action="#" method="POST">
+          <div class="form-group"><label>Nombre Completo</label><input type="text" required placeholder="Ingrese su nombre"></div>
+          <div class="form-group"><label>Empresa</label><input type="text" placeholder="Nombre de la empresa"></div>
+          <div class="form-group"><label>Correo Electrónico</label><input type="email" required placeholder="correo@empresa.com"></div>
+          <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="0999999999"></div>
+          <div class="form-group"><label>Servicio de Interés</label>
+            <select required>
+              <option value="">Seleccione un servicio</option>
+              <option>Auditoría Externa</option>
+              <option>Auditoría Tributaria</option>
+              <option>Control Interno</option>
+              <option>Asesoría NIIF</option>
+              <option>Consultoría Financiera</option>
+              <option>Capacitación In Company</option>
+              <option>Contabilidad y Outsourcing</option>
+              <option>Declaraciones Tributarias</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Mensaje</label><textarea required placeholder="Cuéntenos sobre su empresa y necesidades..."></textarea></div>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>FIDUS</h4>
+        <p>Firma especializada en servicios integrados de auditoría externa, contabilidad y asesoría tributaria en Ecuador. Parte de CAF Consultores &amp; Asesores Financieros.</p>
+        <p><strong style="color:var(--teal-soft)">Confianza que sustenta decisiones estratégicas.</strong></p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@ExcelBlue" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#inicio"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+          <li><a href="#nosotros"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+          <li><a href="#servicios"><i class="fas fa-chevron-right"></i> Servicios</a></li>
+          <li><a href="#equipo"><i class="fas fa-chevron-right"></i> Equipo</a></li>
+          <li><a href="#proceso"><i class="fas fa-chevron-right"></i> Cómo Funciona</a></li>
+          <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios" data-service="auditoria-externa"><i class="fas fa-chevron-right"></i> Auditoría Externa</a></li>
+          <li><a href="#servicios" data-service="auditoria-tributaria"><i class="fas fa-chevron-right"></i> Auditoría Tributaria</a></li>
+          <li><a href="#servicios" data-service="control-interno"><i class="fas fa-chevron-right"></i> Control Interno</a></li>
+          <li><a href="#servicios" data-service="asesoria-niif"><i class="fas fa-chevron-right"></i> Asesoría NIIF</a></li>
+          <li><a href="#servicios" data-service="consultoria-financiera"><i class="fas fa-chevron-right"></i> Consultoría Financiera</a></li>
+          <li><a href="#servicios" data-service="contabilidad"><i class="fas fa-chevron-right"></i> Contabilidad y Outsourcing</a></li>
+          <li><a href="#servicios" data-service="declaraciones"><i class="fas fa-chevron-right"></i> Declaraciones Tributarias</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#contacto"><i class="fas fa-map-marker-alt"></i> Quito, Ecuador</a></li>
+          <li><a href="tel:0979045062"><i class="fas fa-phone"></i> 097 904 5062</a></li>
+          <li><a href="mailto:fidusauditores@gmail.com"><i class="fas fa-envelope"></i> fidusauditores@gmail.com</a></li>
+          <li><a href="https://asesorescaf.com" target="_blank" rel="noopener"><i class="fas fa-globe"></i> asesorescaf.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 FIDUS Auditoría Externa · Todos los derechos reservados · Quito, Ecuador</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/593979045062" class="wpp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#" class="to-top" id="toTop" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></a>
+
+<!-- ============ OVERLAY DE SERVICIOS ============ -->
+<div class="serv-overlay" id="servOverlay">
+  <button class="serv-close" id="servClose" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+  <div class="serv-overlay-inner">
+    <div class="serv-head">
+      <div class="serv-head-icon"><i id="ovIcon" class="fas fa-shield-alt"></i></div>
+      <div class="serv-head-tag" id="ovTag">Servicio Profesional</div>
+      <h2 id="ovTitle">Auditoría Externa</h2>
+      <p class="lead" id="ovSubtitle"></p>
+    </div>
+    <div class="serv-blocks">
+      <div class="serv-block" id="ovBlockIncludes">
+        <div class="serv-block-head">
+          <div class="serv-block-icon"><i class="fas fa-clipboard-list"></i></div>
+          <h3>¿Qué incluye este servicio?</h3>
+        </div>
+        <ul id="ovListIncludes"></ul>
+      </div>
+      <div class="serv-block benefits" id="ovBlockBenefits">
+        <div class="serv-block-head">
+          <div class="serv-block-icon"><i class="fas fa-award"></i></div>
+          <h3>Beneficios para su empresa</h3>
+        </div>
+        <ul id="ovListBenefits"></ul>
+      </div>
+    </div>
+    <div class="serv-cta" id="ovCta">
+      <div class="serv-cta-icon"><i class="fas fa-handshake"></i></div>
+      <h3>¿Listo para <span>trabajar juntos</span>?</h3>
+      <p>Cuéntenos sobre su empresa y necesidades. Nuestro equipo de socios le atenderá directamente.</p>
+      <div class="serv-cta-btns">
+        <a href="#contacto" class="btn btn-primary" id="ovCtaBtn"><i class="fas fa-calendar-check"></i> Contáctanos ahora</a>
+        <a href="https://wa.me/593979045062" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============ DATOS DE LOS SERVICIOS ============ */
+const SERVICES = {
+  'auditoria-externa': {
+    icon:'fa-shield-alt', tag:'Servicio Estrella', title:'Auditoría Externa',
+    subtitle:'Dictamen independiente sobre los estados financieros de su empresa, ejecutado bajo Normas Internacionales de Auditoría (NIA) con informe a la Superintendencia de Compañías, Valores y Seguros.',
+    includes:[
+      'Evaluación de estados financieros completos: situación financiera, resultados, cambios en el patrimonio, flujos de efectivo y notas',
+      'Pruebas sustantivas y de cumplimiento sobre saldos y transacciones significativas',
+      'Confirmaciones a terceros: bancos, clientes, proveedores, abogados y partes relacionadas',
+      'Evaluación de riesgos de incorrección material, incluido el riesgo de fraude',
+      'Dictamen del auditor independiente con la opinión correspondiente',
+      'Carta a la gerencia con hallazgos y recomendaciones de control interno'
+    ],
+    benefits:[
+      'Cumplimiento obligatorio ante la Superintendencia de Compañías',
+      'Información financiera confiable para accionistas, bancos e inversionistas',
+      'Detección temprana de riesgos y oportunidades de mejora',
+      'Respaldo técnico para la toma de decisiones estratégicas'
+    ]
+  },
+  'auditoria-tributaria': {
+    icon:'fa-search-dollar', tag:'Cumplimiento SRI', title:'Auditoría Tributaria',
+    subtitle:'Revisión integral del cumplimiento tributario de su empresa frente al Servicio de Rentas Internas, para anticipar contingencias antes de un control.',
+    includes:[
+      'Revisión de declaraciones de IVA, Impuesto a la Renta y retenciones',
+      'Conciliación tributaria entre la contabilidad y las declaraciones presentadas',
+      'Verificación de anexos: ATS, ADI, RDEP, REBEFICS y otros',
+      'Análisis de deducibilidad de gastos y aplicación de beneficios tributarios',
+      'Identificación de contingencias y riesgos ante el SRI',
+      'Informe de cumplimiento tributario con recomendaciones'
+    ],
+    benefits:[
+      'Reducción del riesgo de multas, intereses y sanciones',
+      'Preparación ante eventuales procesos de control del SRI',
+      'Aprovechamiento óptimo de beneficios tributarios vigentes',
+      'Tranquilidad para gerencia y accionistas'
+    ]
+  },
+  'control-interno': {
+    icon:'fa-clipboard-check', tag:'Mejora de Procesos', title:'Control Interno',
+    subtitle:'Evaluación profunda de los procesos y ciclos operativos de su empresa, con recomendaciones priorizadas por nivel de riesgo y enfoque en resultados.',
+    includes:[
+      'Levantamiento y documentación de ciclos operativos clave',
+      'Evaluación del diseño y efectividad de los controles internos',
+      'Identificación de debilidades y oportunidades de mejora',
+      'Matriz de riesgos priorizada por impacto y probabilidad',
+      'Recomendaciones concretas y aplicables para cada hallazgo',
+      'Informe ejecutivo y presentación a la administración'
+    ],
+    benefits:[
+      'Mayor eficiencia operativa y reducción de pérdidas',
+      'Prevención de fraudes y errores significativos',
+      'Mejora continua de los procesos financieros y administrativos',
+      'Base sólida para la toma de decisiones gerenciales'
+    ]
+  },
+  'asesoria-niif': {
+    icon:'fa-book-open', tag:'Normas Internacionales', title:'Asesoría NIIF',
+    subtitle:'Aplicación, transición y adopción de las Normas Internacionales de Información Financiera, incluida la NIIF 18 de presentación y revelación.',
+    includes:[
+      'Diagnóstico del impacto de las NIIF en los estados financieros',
+      'Plan de transición y adopción por etapas',
+      'Capacitación al equipo contable en normas específicas',
+      'Aplicación práctica de NIC 19, NIIF 16 y NIIF 18',
+      'Ajustes y reclasificaciones necesarias en la contabilidad',
+      'Acompañamiento durante el primer año de aplicación'
+    ],
+    benefits:[
+      'Estados financieros alineados con estándares internacionales',
+      'Mayor comparabilidad y transparencia ante inversionistas',
+      'Cumplimiento normativo de la Superintendencia de Compañías',
+      'Mejor acceso a financiamiento internacional'
+    ]
+  },
+  'consultoria-financiera': {
+    icon:'fa-chart-line', tag:'Estrategia y Crecimiento', title:'Consultoría Financiera',
+    subtitle:'Análisis profundo de la estructura financiera de su empresa, indicadores de gestión, presupuestos y viabilidad de proyectos de inversión.',
+    includes:[
+      'Análisis de la estructura financiera y de capital',
+      'Cálculo e interpretación de indicadores de gestión',
+      'Elaboración y seguimiento de presupuestos',
+      'Evaluación de viabilidad de proyectos de inversión',
+      'Modelos financieros y proyecciones a corto y mediano plazo',
+      'Informe ejecutivo con recomendaciones estratégicas'
+    ],
+    benefits:[
+      'Decisiones basadas en información financiera confiable',
+      'Mejor gestión del capital de trabajo y liquidez',
+      'Identificación de oportunidades de rentabilidad',
+      'Mayor capacidad de negociación con bancos e inversionistas'
+    ]
+  },
+  'capacitacion': {
+    icon:'fa-users', tag:'Formación Profesional', title:'Capacitación In Company',
+    subtitle:'Programas de capacitación contable, financiera y tributaria diseñados a la medida de las necesidades de su equipo de trabajo.',
+    includes:[
+      'Diagnóstico de necesidades de formación del equipo',
+      'Diseño de programa personalizado por área',
+      'Temario adaptado a la realidad de su empresa',
+      'Material didáctico y casos prácticos aplicados',
+      'Capacitación presencial o virtual en sus instalaciones',
+      'Evaluación y certificación de participantes'
+    ],
+    benefits:[
+      'Equipo actualizado en normativa vigente',
+      'Mejora del desempeño y productividad interna',
+      'Reducción de errores contables y tributarios',
+      'Beneficio directo para la operación diaria'
+    ]
+  },
+  'contabilidad': {
+    icon:'fa-calculator', tag:'Tercerización Integral', title:'Contabilidad y Outsourcing',
+    subtitle:'Servicios contables integrales y outsourcing, para que su empresa se concentre en su core de negocio mientras nosotros nos ocupamos de la parte contable.',
+    includes:[
+      'Registro y procesamiento de todas las transacciones contables',
+      'Teneduría de libros bajo NIIF',
+      'Procesamiento de nómina y obligaciones laborales',
+      'Diseño de métodos y procedimientos contables',
+      'Programas de contabilidad de costos y control presupuestario',
+      'Estados financieros mensuales y reportes gerenciales'
+    ],
+    benefits:[
+      'Reducción de costos administrativos y de personal',
+      'Información contable oportuna y confiable',
+      'Liberación de recursos para el core del negocio',
+      'Cumplimiento permanente de obligaciones contables'
+    ]
+  },
+  'declaraciones': {
+    icon:'fa-file-invoice-dollar', tag:'Cumplimiento Oportuno', title:'Declaraciones Tributarias',
+    subtitle:'Preparación, revisión y presentación oportuna de todas las declaraciones y anexos exigidos por el Servicio de Rentas Internas.',
+    includes:[
+      'Declaración mensual de IVA y retenciones en la fuente',
+      'Declaración anual de Impuesto a la Renta de sociedades',
+      'Presentación del Anexo Transaccional Simplificado (ATS)',
+      'Reporte de Beneficiarios Finales (REBEFICS) y ADI',
+      'Declaración de patente municipal y trámites relacionados',
+      'Representación y asistencia ante el SRI'
+    ],
+    benefits:[
+      'Cumplimiento oportuno de todas las obligaciones tributarias',
+      'Evita multas, intereses y sanciones del SRI',
+      'Información tributaria consistente con la contabilidad',
+      'Tranquilidad para la administración y los accionistas'
+    ]
+  }
+};
+
+/* ============ OVERLAY LOGIC ============ */
+const overlay = document.getElementById('servOverlay');
+const closeBtn = document.getElementById('servClose');
+const ovIcon = document.getElementById('ovIcon');
+const ovTag = document.getElementById('ovTag');
+const ovTitle = document.getElementById('ovTitle');
+const ovSubtitle = document.getElementById('ovSubtitle');
+const ovListIncludes = document.getElementById('ovListIncludes');
+const ovListBenefits = document.getElementById('ovListBenefits');
+const ovBlockIncludes = document.getElementById('ovBlockIncludes');
+const ovBlockBenefits = document.getElementById('ovBlockBenefits');
+const ovCta = document.getElementById('ovCta');
+
+function openService(id){
+  const s = SERVICES[id];
+  if(!s) return;
+
+  ovBlockIncludes.classList.remove('revealed');
+  ovBlockBenefits.classList.remove('revealed');
+  ovCta.classList.remove('revealed');
+  ovListIncludes.innerHTML = '';
+  ovListBenefits.innerHTML = '';
+
+  ovIcon.className = 'fas ' + s.icon;
+  ovTag.textContent = s.tag;
+  ovTitle.textContent = s.title;
+  ovSubtitle.textContent = s.subtitle;
+
+  s.includes.forEach(item=>{
+    const li = document.createElement('li');
+    li.textContent = item;
+    ovListIncludes.appendChild(li);
+  });
+  s.benefits.forEach(item=>{
+    const li = document.createElement('li');
+    li.textContent = item;
+    ovListBenefits.appendChild(li);
+  });
+
+  overlay.classList.add('open');
+  document.body.classList.add('no-scroll');
+  overlay.scrollTop = 0;
+
+  setTimeout(()=>ovBlockIncludes.classList.add('revealed'), 300);
+  setTimeout(()=>ovBlockBenefits.classList.add('revealed'), 500);
+  setTimeout(()=>ovCta.classList.add('revealed'), 900);
+}
+
+function closeService(){
+  overlay.classList.remove('open');
+  document.body.classList.remove('no-scroll');
+}
+
+document.querySelectorAll('.service-card').forEach(card=>{
+  card.addEventListener('click', ()=> openService(card.dataset.service));
+});
+
+document.querySelectorAll('.footer-col a[data-service]').forEach(a=>{
+  a.addEventListener('click', (e)=>{
+    e.preventDefault();
+    openService(a.dataset.service);
+  });
+});
+
+closeBtn.addEventListener('click', closeService);
+document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeService(); });
+
+document.getElementById('ovCtaBtn').addEventListener('click', ()=>{
+  closeService();
+});
+
+/* ============ HEADER SCROLL ============ */
+const header=document.getElementById('header'),toTop=document.getElementById('toTop');
+window.addEventListener('scroll',()=>{
+  header.classList.toggle('scrolled',window.scrollY>50);
+  toTop.classList.toggle('show',window.scrollY>500);
+});
+
+/* MENU */
+const mt=document.getElementById('menuToggle'),nl=document.getElementById('navLinks');
+mt.addEventListener('click',()=>{
+  nl.classList.toggle('open');
+  const i=mt.querySelector('i');
+  i.classList.toggle('fa-bars');i.classList.toggle('fa-times');
+});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+  nl.classList.remove('open');
+  const i=mt.querySelector('i');i.classList.add('fa-bars');i.classList.remove('fa-times');
+}));
+
+/* ============ FAQ - SOLO UNA ABIERTA A LA VEZ ============ */
+document.querySelectorAll('.faq-question').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+
+/* ============ REVEAL SCROLL ============ */
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target);}});
+},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.service-card,.process-card,.test-card,.brand-card,.why-card,.faq-item,.contact-item,.team-card,.map-wrap').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(40px)';
+  el.style.transition='opacity .8s ease, transform .8s ease';
+  obs.observe(el);
+});
+
+/* NAV ACTIVE */
+const sections=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY+120;
+  sections.forEach(s=>{
+    const top=s.offsetTop,bottom=top+s.offsetHeight;
+    const link=document.querySelector(`.nav-links a[href="#${s.id}"]`);
+    if(link)link.classList.toggle('active',y>=top&&y<bottom);
+  });
+});
+
+/* TO TOP */
+toTop.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+</body>
+</html>
